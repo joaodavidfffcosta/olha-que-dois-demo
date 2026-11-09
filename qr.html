@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Códigos QR das mesas · Olha que Dois</title>
+  <meta name="description" content="Folha para imprimir com os códigos QR das mesas do Olha que Dois.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1F4E8C">
+  <link rel="canonical" href="https://joaodavidfffcosta.github.io/olha-que-dois-demo/qr.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261109">
+  <link rel="stylesheet" href="assets/css/pedidos.css?v=20261109">
+  <link rel="icon" href="assets/images/favicon.svg?v=20261109" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png?v=20261109" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=20261109">
+  <script src="assets/js/site-data.js?v=20261109" defer></script>
+  <script type="module" src="assets/js/qr-sheet.js?v=20261109"></script>
+</head>
+<body class="qr-sheet">
+  <main>
+    <header class="qr-tools no-print">
+      <div class="stack">
+        <h1>Códigos QR das mesas</h1>
+        <p>Seis por folha A4, prontos a recortar. <span class="ph" data-tables-tag>[CONFIRMAR: nº de mesas]</span></p>
+        <p class="ph" data-local-warning hidden>Estes códigos apontam para este computador. Imprima-os depois de publicar o site.</p>
+      </div>
+      <button class="btn btn--primary" type="button" data-print>
+        <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#printer"></use></svg>
+        Imprimir folha
+      </button>
+    </header>
+    <div data-qr-pages></div>
+  </main>
+</body>
+</html>

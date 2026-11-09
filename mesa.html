@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mesa · Olha que Dois</title>
+  <meta name="description" content="Demonstração de pedidos pela mesa no Olha que Dois.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1F4E8C">
+  <link rel="canonical" href="https://joaodavidfffcosta.github.io/olha-que-dois-demo/mesa.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script>if (window !== window.top) document.documentElement.classList.add("in-frame");</script>
+  <!-- No web fonts here: the ordering flow makes no external network calls. -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261109">
+  <link rel="stylesheet" href="assets/css/pedidos.css?v=20261109">
+  <link rel="icon" href="assets/images/favicon.svg?v=20261109" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png?v=20261109" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=20261109">
+  <script src="assets/js/site-data.js?v=20261109" defer></script>
+  <script src="assets/js/menu-data.js?v=20261109" defer></script>
+  <script type="module" src="assets/js/mesa.js?v=20261109"></script>
+</head>
+<body class="order-page">
+  <p class="demo-ribbon">MODO DEMONSTRAÇÃO, nenhum pedido é enviado ao restaurante</p>
+
+  <main class="order-shell">
+    <header class="order-header">
+      <h1 data-table-title>Olha que Dois</h1>
+    </header>
+
+    <noscript><p>Esta demonstração precisa de JavaScript.</p></noscript>
+
+    <section data-menu-screen>
+      <div class="order-chips" role="group" aria-label="Filtrar por categoria" data-order-chips></div>
+      <div data-order-groups></div>
+    </section>
+
+    <section data-status-screen hidden></section>
+
+    <section class="stack" data-invalid-screen hidden>
+      <h2>Esta mesa não existe</h2>
+      <p>Leia novamente o código QR que está na sua mesa.</p>
+      <a class="btn btn--secondary" href="mesa.html?mesa=4">Ver a mesa de demonstração</a>
+    </section>
+
+    <p class="visually-hidden" role="status" data-status-live></p>
+  </main>
+
+  <div class="cart-bar" data-cart-bar hidden>
+    <p class="cart-bar__summary" role="status">
+      <span data-cart-count></span>
+      <span><span data-cart-total></span> <small>valor indicativo</small></span>
+    </p>
+    <button class="btn btn--primary" type="button" data-cart-send>Enviar pedido para a cozinha</button>
+  </div>
+
+  <dialog class="sheet" aria-labelledby="confirm-title" data-confirm>
+    <h2 id="confirm-title">Confirmar o pedido</h2>
+    <div data-confirm-list></div>
+    <p class="summary-total">
+      <span>Total</span>
+      <span><span data-confirm-total></span> <small>valor indicativo</small></span>
+    </p>
+    <div class="sheet__actions">
+      <button class="btn btn--primary" type="button" data-confirm-send>Enviar pedido</button>
+      <button class="btn btn--ghost" type="button" data-confirm-back>Voltar</button>
+    </div>
+  </dialog>
+</body>
+</html>

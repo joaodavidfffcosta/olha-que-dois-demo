@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Demonstração de pedidos · Olha que Dois</title>
+  <meta name="description" content="Experimente os pedidos pela mesa do Olha que Dois: do telemóvel do cliente ao talão na cozinha.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1F4E8C">
+  <link rel="canonical" href="https://joaodavidfffcosta.github.io/olha-que-dois-demo/demonstracao.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261109">
+  <link rel="stylesheet" href="assets/css/pedidos.css?v=20261109">
+  <link rel="icon" href="assets/images/favicon.svg?v=20261109" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png?v=20261109" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=20261109">
+  <script src="assets/js/site-data.js?v=20261109" defer></script>
+  <script type="module" src="assets/js/demonstracao.js?v=20261109"></script>
+</head>
+<body class="demo-page">
+  <p class="demo-ribbon">MODO DEMONSTRAÇÃO, nenhum pedido é enviado ao restaurante</p>
+
+  <header class="demo-header">
+    <a class="demo-header__back" href="./">Voltar ao site</a>
+    <h1>Pedidos pela mesa</h1>
+    <div class="demo-switch" role="group" aria-label="Escolher ecrã">
+      <button class="chip-btn" type="button" aria-pressed="true" data-view="mesa">Mesa</button>
+      <button class="chip-btn" type="button" aria-pressed="false" data-view="cozinha">
+        Cozinha <span class="demo-switch__badge" data-badge hidden></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="demo" data-demo data-current="mesa">
+    <div class="demo__screen demo__phone">
+      <iframe src="mesa.html?mesa=4" title="Ecrã do cliente na mesa 4"></iframe>
+    </div>
+    <div class="demo__screen demo__kitchen">
+      <iframe src="cozinha.html" title="Ecrã da cozinha"></iframe>
+    </div>
+  </main>
+</body>
+</html>

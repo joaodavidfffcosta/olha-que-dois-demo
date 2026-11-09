@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Guia de marca · Olha que Dois</title>
+  <meta name="description" content="Proposta de identidade visual para o website do Olha que Dois: logótipo, cores, letras e componentes.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1F4E8C">
+  <link rel="canonical" href="https://joaodavidfffcosta.github.io/olha-que-dois-demo/styleguide.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261109">
+  <link rel="icon" href="assets/images/favicon.svg?v=20261109" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png?v=20261109" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=20261109">
+  <script src="assets/js/site-data.js?v=20261109" defer></script>
+  <script type="module" src="assets/js/app.js?v=20261109"></script>
+  <style>
+    /* Styleguide-only layout. Nothing here ships to the public pages. */
+    .sg-intro { padding-block: var(--space-16) var(--space-12); }
+    .sg-block { display: grid; gap: var(--space-6); padding-block: var(--space-10); border-top: 1px solid var(--color-line); }
+    .sg-block__title { font-size: var(--text-h3); }
+    .sg-block__note { margin-top: var(--space-2); color: var(--color-muted); font-size: var(--text-small); }
+    .sg-grid { display: grid; gap: var(--space-4); min-width: 0; }
+    .sg-label { color: var(--color-muted); font-size: var(--text-small); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.875em; }
+
+    .sg-logos { display: grid; gap: var(--space-4); }
+    .sg-logo { display: grid; place-items: center start; min-height: 8rem; padding: var(--space-6); border-radius: var(--radius-md); }
+    .sg-logo--light { border: 1px solid var(--color-line); background: var(--color-surface); }
+    .sg-logo--dark { background: var(--color-azulejo-deep); color: var(--color-cream); --mark-edge: var(--color-cream); }
+    .sg-wordmark { display: inline-flex; align-items: center; gap: var(--space-3); }
+    .sg-wordmark svg { flex: none; width: clamp(3.5rem, 2.75rem + 3vw, 5rem); height: clamp(1.75rem, 1.375rem + 1.5vw, 2.5rem); }
+    .sg-wordmark span { font-family: var(--font-display); font-size: clamp(1.625rem, 1.4rem + 1.1vw, 2.5rem); font-weight: 600; letter-spacing: -0.01em; line-height: 1; white-space: nowrap; }
+
+    .sg-swatches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+    .sg-swatch { display: grid; align-content: end; min-height: 7.5rem; padding: var(--space-3); border-radius: var(--radius-md); font-size: var(--text-small); line-height: 1.35; }
+    .sg-swatch strong { font-weight: 600; }
+    .sg-swatch--outlined { border: 1px solid var(--color-line); }
+    .sg-swatch--lead { grid-column: span 2; min-height: 10rem; }
+
+    .sg-table { width: 100%; border-collapse: collapse; font-size: var(--text-small); }
+    .sg-table th, .sg-table td { padding: var(--space-2) var(--space-3) var(--space-2) 0; border-bottom: 1px solid var(--color-line); text-align: left; vertical-align: top; }
+    .sg-table th { font-weight: 600; }
+    .sg-table td:last-child, .sg-table th:last-child { padding-right: 0; text-align: right; font-variant-numeric: tabular-nums; }
+
+    .sg-type { display: grid; gap: var(--space-5); min-width: 0; }
+    .sg-type > div { display: grid; gap: var(--space-1); }
+
+    .sg-spaces { display: grid; gap: var(--space-2); }
+    .sg-space { display: grid; grid-template-columns: 3.5rem 1fr; align-items: center; font-size: var(--text-small); }
+    .sg-space i { display: block; height: 0.75rem; border-radius: 1px; background: var(--color-terracotta); }
+
+    .sg-boxes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+    .sg-box { display: grid; place-items: center; min-height: 5.5rem; padding: var(--space-2); background: var(--color-surface); border: 1px solid var(--color-line); font-size: var(--text-small); text-align: center; }
+
+    .sg-states { display: grid; gap: var(--space-5); }
+    .sg-states > div { display: grid; gap: var(--space-2); }
+    .is-focus { outline: 3px solid var(--color-terracotta); outline-offset: 2px; }
+
+    .sg-pattern { min-height: 10rem; padding: var(--space-5); border: 1px solid var(--color-line); border-radius: var(--radius-md); background: var(--color-surface); }
+    .sg-pattern--strong { background: var(--color-azulejo); color: var(--color-cream); border-color: var(--color-azulejo); --azulejo-color: var(--color-cream); --azulejo-opacity: 0.35; }
+    .sg-pattern p { display: inline-block; padding-inline: var(--space-2); background: var(--color-surface); }
+    .sg-pattern--strong p { background: var(--color-azulejo); }
+
+    .sg-tags { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+
+    .sg-bar-frame { max-width: 22.5rem; overflow: hidden; border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-cream); box-shadow: var(--shadow-md); }
+    .sg-bar-frame .action-bar { position: static; display: grid; padding-bottom: 0; }
+
+    @media (min-width: 640px) {
+      .sg-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sg-swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .sg-boxes { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 960px) {
+      .sg-block { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--space-10); padding-block: var(--space-12); }
+      .sg-states { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="brand" href="./" aria-label="Olha que Dois, página inicial">
+        <svg class="brand__mark" aria-hidden="true"><use href="assets/images/icons.svg#mark"></use></svg>
+        <span class="brand__name" data-text="name">Olha que Dois</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span data-nav-label>Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="./#ementa">Ementa</a></li>
+          <li><a class="site-nav__link" href="./#pratos-do-dia">Pratos do dia</a></li>
+          <li><a class="site-nav__link" href="./#galeria">Galeria</a></li>
+          <li><a class="site-nav__link" href="./#horario">Horário</a></li>
+          <li><a class="site-nav__link" href="./#contactos">Contactos</a></li>
+        </ul>
+      </nav>
+      <a class="site-header__call" data-href="links.callLandline" href="tel:+351218162108">
+        <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#phone"></use></svg>
+        <span data-text="phones.landline.display">218 162 108</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="container">
+      <div class="sg-intro stack">
+        <h1>Guia de marca</h1>
+        <p>Uma proposta para o Olha que Dois. As cores vêm do azulejo e das paredes caiadas de Lisboa. As letras têm o ar de uma ementa antiga. Tudo aqui pode mudar a seu gosto.</p>
+      </div>
+
+      <section class="sg-block" aria-labelledby="sg-logo">
+        <div>
+          <h2 class="sg-block__title" id="sg-logo">Logótipo</h2>
+          <p class="sg-block__note">Dois azulejos lado a lado, um por cada metade do nome.</p>
+        </div>
+        <div class="sg-grid">
+          <p><span class="ph">[CONFIRMAR: Mário tem logótipo?]</span></p>
+          <div class="sg-logos">
+            <div class="sg-logo sg-logo--light">
+              <div class="sg-wordmark">
+                <svg aria-hidden="true"><use href="assets/images/icons.svg#mark"></use></svg>
+                <span>Olha que Dois</span>
+              </div>
+            </div>
+            <div class="sg-logo sg-logo--dark">
+              <div class="sg-wordmark">
+                <svg aria-hidden="true"><use href="assets/images/icons.svg#mark"></use></svg>
+                <span>Olha que Dois</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-block" aria-labelledby="sg-cores">
+        <div>
+          <h2 class="sg-block__title" id="sg-cores">Cores</h2>
+          <p class="sg-block__note">Todos os textos têm um contraste de pelo menos 4,5:1, para se lerem bem em qualquer telemóvel.</p>
+        </div>
+        <div class="sg-grid">
+          <ul class="sg-swatches">
+            <li class="sg-swatch sg-swatch--lead" style="background:var(--color-azulejo);color:var(--color-cream)"><strong>Azul azulejo</strong><code>#1F4E8C</code></li>
+            <li class="sg-swatch sg-swatch--lead sg-swatch--outlined" style="background:var(--color-cream)"><strong>Creme caiado</strong><code>#FAF6EE</code></li>
+            <li class="sg-swatch" style="background:var(--color-terracotta);color:var(--color-cream)"><strong>Terracota</strong><code>#9E3B2C</code></li>
+            <li class="sg-swatch" style="background:var(--color-charcoal);color:var(--color-cream)"><strong>Carvão</strong><code>#222222</code></li>
+            <li class="sg-swatch" style="background:var(--color-azulejo-deep);color:var(--color-cream)"><strong>Azul fundo</strong><code>#163A69</code></li>
+            <li class="sg-swatch" style="background:var(--color-terracotta-deep);color:var(--color-cream)"><strong>Terracota escura</strong><code>#7F2E22</code></li>
+            <li class="sg-swatch sg-swatch--outlined" style="background:var(--color-paper)"><strong>Papel</strong><code>#F2EBDD</code></li>
+            <li class="sg-swatch sg-swatch--outlined" style="background:var(--color-surface)"><strong>Superfície</strong><code>#FFFDF9</code></li>
+            <li class="sg-swatch sg-swatch--outlined" style="background:var(--color-azulejo-tint);color:var(--color-azulejo-deep)"><strong>Azul claro</strong><code>#E6EDF6</code></li>
+            <li class="sg-swatch" style="background:var(--color-muted);color:var(--color-cream)"><strong>Cinza quente</strong><code>#5F584E</code></li>
+            <li class="sg-swatch sg-swatch--outlined" style="background:var(--color-line)"><strong>Linha</strong><code>#DCCFB9</code></li>
+            <li class="sg-swatch" style="background:var(--color-success-bg);color:var(--color-success)"><strong>Aberto</strong><code>#2B6A3E</code></li>
+            <li class="sg-swatch" style="background:var(--color-warning-bg);color:var(--color-warning)"><strong>A confirmar</strong><code>#7A4A00</code></li>
+          </ul>
+          <table class="sg-table">
+            <caption class="visually-hidden">Contraste entre as cores de texto e de fundo</caption>
+            <thead><tr><th scope="col">Texto sobre fundo</th><th scope="col">Contraste</th></tr></thead>
+            <tbody>
+              <tr><td>Carvão sobre creme</td><td>14,76:1</td></tr>
+              <tr><td>Carvão sobre papel</td><td>13,41:1</td></tr>
+              <tr><td>Cinza quente sobre creme</td><td>6,51:1</td></tr>
+              <tr><td>Cinza quente sobre papel</td><td>5,92:1</td></tr>
+              <tr><td>Azul azulejo sobre creme</td><td>7,71:1</td></tr>
+              <tr><td>Creme sobre azul azulejo</td><td>7,71:1</td></tr>
+              <tr><td>Creme sobre azul fundo</td><td>10,57:1</td></tr>
+              <tr><td>Terracota sobre creme</td><td>6,25:1</td></tr>
+              <tr><td>Creme sobre terracota</td><td>6,25:1</td></tr>
+              <tr><td>Etiqueta «a confirmar»</td><td>6,58:1</td></tr>
+              <tr><td>Etiqueta «aberto»</td><td>5,53:1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="sg-block" aria-labelledby="sg-letras">
+        <div>
+          <h2 class="sg-block__title" id="sg-letras">Letras</h2>
+          <p class="sg-block__note">Fraunces nos títulos, Inter no texto. O texto corrido é grande de propósito.</p>
+        </div>
+        <div class="sg-type">
+          <div><span class="sg-label">Destaque</span><p class="text-display">Olha que Dois</p></div>
+          <div><span class="sg-label">Título 1</span><p style="font:600 var(--text-h1)/1.1 var(--font-display);letter-spacing:-.01em">Cozinha portuguesa de sempre</p></div>
+          <div><span class="sg-label">Título 2</span><p style="font:600 var(--text-h2)/1.1 var(--font-display);letter-spacing:-.01em">Pratos do dia</p></div>
+          <div><span class="sg-label">Título 3</span><p style="font:600 var(--text-h3)/1.2 var(--font-display)">Arroz de pato</p></div>
+          <div><span class="sg-label">Texto</span><p>Casa familiar com padaria na frente e amplo restaurante, desde 2002.</p></div>
+          <div><span class="sg-label">Pequeno</span><p class="text-small">Terça a domingo, das 07h00 às 23h00.</p></div>
+        </div>
+      </section>
+
+      <section class="sg-block" aria-labelledby="sg-medidas">
+        <div>
+          <h2 class="sg-block__title" id="sg-medidas">Medidas</h2>
+          <p class="sg-block__note">Espaçamentos em múltiplos de 4, cantos pouco arredondados e sombras em tom quente.</p>
+        </div>
+        <div class="sg-grid">
+          <div class="sg-spaces">
+            <div class="sg-space"><span>4</span><i style="width:var(--space-1)"></i></div>
+            <div class="sg-space"><span>8</span><i style="width:var(--space-2)"></i></div>
+            <div class="sg-space"><span>12</span><i style="width:var(--space-3)"></i></div>
+            <div class="sg-space"><span>16</span><i style="width:var(--space-4)"></i></div>
+            <div class="sg-space"><span>20</span><i style="width:var(--space-5)"></i></div>
+            <div class="sg-space"><span>24</span><i style="width:var(--space-6)"></i></div>
+            <div class="sg-space"><span>32</span><i style="width:var(--space-8)"></i></div>
+            <div class="sg-space"><span>40</span><i style="width:var(--space-10)"></i></div>
+            <div class="sg-space"><span>48</span><i style="width:var(--space-12)"></i></div>
+            <div class="sg-space"><span>64</span><i style="width:var(--space-16)"></i></div>
+            <div class="sg-space"><span>80</span><i style="width:var(--space-20)"></i></div>
+            <div class="sg-space"><span>96</span><i style="width:var(--space-24)"></i></div>
+          </div>
+          <div class="sg-boxes">
+            <div class="sg-box" style="border-radius:var(--radius-sm)">Canto 3 px</div>
+            <div class="sg-box" style="border-radius:var(--radius-md)">Canto 6 px</div>
+            <div class="sg-box" style="border-radius:var(--radius-lg)">Canto 12 px</div>
+            <div class="sg-box" style="border-radius:var(--radius-pill)">Etiqueta</div>
+            <div class="sg-box" style="box-shadow:var(--shadow-sm)">Sombra leve</div>
+            <div class="sg-box" style="box-shadow:var(--shadow-md)">Sombra média</div>
+            <div class="sg-box" style="box-shadow:var(--shadow-lg)">Sombra forte</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-block" aria-labelledby="sg-botoes">
+        <div>
+          <h2 class="sg-block__title" id="sg-botoes">Botões</h2>
+          <p class="sg-block__note">Com pelo menos 48 px de altura, fáceis de carregar com o polegar.</p>
+        </div>
+        <div class="sg-states">
+          <div>
+            <span class="sg-label">Normal</span>
+            <div class="btn-group">
+              <span class="btn btn--primary">Ligar</span>
+              <span class="btn btn--secondary">Como chegar</span>
+              <span class="btn btn--ghost">Ver a ementa</span>
+            </div>
+          </div>
+          <div>
+            <span class="sg-label">Rato por cima</span>
+            <div class="btn-group">
+              <span class="btn btn--primary is-hover">Ligar</span>
+              <span class="btn btn--secondary is-hover">Como chegar</span>
+              <span class="btn btn--ghost is-hover">Ver a ementa</span>
+            </div>
+          </div>
+          <div>
+            <span class="sg-label">A carregar</span>
+            <div class="btn-group">
+              <span class="btn btn--primary is-active">Ligar</span>
+              <span class="btn btn--secondary is-active">Como chegar</span>
+              <span class="btn btn--ghost is-active">Ver a ementa</span>
+            </div>
+          </div>
+          <div>
+            <span class="sg-label">Foco com teclado</span>
+            <div class="btn-group">
+              <span class="btn btn--primary is-focus">Ligar</span>
+              <span class="btn btn--secondary is-focus">Como chegar</span>
+              <span class="btn btn--ghost is-focus">Ver a ementa</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-block" aria-labelledby="sg-azulejo">
+        <div>
+          <h2 class="sg-block__title" id="sg-azulejo">Azulejo</h2>
+          <p class="sg-block__note">Usado com moderação: em faixa no rodapé e como fundo muito leve.</p>
+        </div>
+        <div class="sg-grid">
+          <div class="azulejo-band" aria-hidden="true"></div>
+          <div class="sg-logos">
+            <div class="sg-pattern azulejo"><p class="text-small">Fundo leve</p></div>
+            <div class="sg-pattern sg-pattern--strong azulejo"><p class="text-small">Sobre azul</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-block" aria-labelledby="sg-etiquetas">
+        <div>
+          <h2 class="sg-block__title" id="sg-etiquetas">Etiquetas</h2>
+          <p class="sg-block__note">As etiquetas amarelas marcam o que ainda falta confirmar e desaparecem no site final.</p>
+        </div>
+        <div class="sg-grid">
+          <div class="sg-tags">
+            <span class="ph">[CONFIRMAR]</span>
+            <span class="ph">[FOTO: substituir por foto real]</span>
+          </div>
+          <div class="sg-tags">
+            <span class="badge badge--open">Aberto agora · fecha às 23h00</span>
+            <span class="badge badge--closed">Fechado · abre às 07h00</span>
+            <span class="badge badge--pending">Horário a confirmar</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-block" aria-labelledby="sg-barra">
+        <div>
+          <h2 class="sg-block__title" id="sg-barra">Barra de ações</h2>
+          <p class="sg-block__note">Fica sempre visível no telemóvel: ligar, enviar mensagem ou ver o caminho, num só toque.</p>
+        </div>
+        <div class="sg-grid">
+          <div class="sg-bar-frame">
+            <div class="action-bar">
+              <span class="action-bar__item action-bar__item--primary">
+                <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#phone"></use></svg>
+                <span class="action-bar__label">Ligar</span>
+                <span class="action-bar__sub" data-text="phones.landline.display">218 162 108</span>
+              </span>
+              <span class="action-bar__item">
+                <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#message"></use></svg>
+                <span class="action-bar__label">WhatsApp</span>
+                <span class="action-bar__sub"><span class="ph">[CONFIRMAR]</span></span>
+              </span>
+              <span class="action-bar__item">
+                <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#pin"></use></svg>
+                <span class="action-bar__label">Como chegar</span>
+                <span class="action-bar__sub">Ver no mapa</span>
+              </span>
+            </div>
+          </div>
+          <p class="text-small text-muted">O cabeçalho e o rodapé desta página são os componentes reais do website.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="site-footer__band"><div class="azulejo-band" aria-hidden="true"></div></div>
+  <footer class="site-footer on-dark">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a class="brand" href="./" aria-label="Olha que Dois, página inicial">
+            <svg class="brand__mark" aria-hidden="true"><use href="assets/images/icons.svg#mark"></use></svg>
+            <span class="brand__name" data-text="name">Olha que Dois</span>
+          </a>
+          <p class="site-footer__tagline" data-text="tagline">Cozinha portuguesa de sempre, na Penha de França.</p>
+        </div>
+
+        <div>
+          <h2 class="site-footer__title">Morada</h2>
+          <address>
+            <span data-text="address.street">Rua da Penha de França, 94</span><br>
+            <span data-text="address.postalCode">1170-034</span>
+            <span data-text="address.city">Lisboa</span>
+            <span class="ph" data-unless="address.postalCodeConfirmed">[CONFIRMAR: código postal]</span>
+          </address>
+          <a class="site-footer__contact-link" data-href="links.directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=38.723598,-9.129276" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#pin"></use></svg>
+            Como chegar
+          </a>
+        </div>
+
+        <div>
+          <h2 class="site-footer__title">Contactos</h2>
+          <ul class="contact-list">
+            <li>
+              <a class="site-footer__contact-link" data-href="links.callLandline" href="tel:+351218162108">
+                <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#phone"></use></svg>
+                <span data-text="phones.landline.display">218 162 108</span>
+                <span class="visually-hidden">(telefone fixo)</span>
+              </a>
+            </li>
+            <li>
+              <a class="site-footer__contact-link" data-href="links.callMobile" href="tel:+351917102599">
+                <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#phone"></use></svg>
+                <span data-text="phones.mobile.display">917 102 599</span>
+                <span class="visually-hidden">(telemóvel)</span>
+              </a>
+            </li>
+            <li>
+              <a class="site-footer__social" data-href="links.facebook" href="https://www.facebook.com/228207417275719" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#facebook"></use></svg>
+                Facebook
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="site-footer__title">Horário</h2>
+          <ul class="hours-summary" data-hours-summary>
+            <li class="hours-summary__row"><span>Terça a domingo</span><span class="hours-summary__time">07h00 às 23h00</span></li>
+            <li class="hours-summary__row"><span>Segunda</span><span class="ph">[CONFIRMAR]</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__legal">
+        <p>Versão de demonstração, sem compromisso.</p>
+        <a href="privacidade.html">Privacidade</a>
+        <p class="site-footer__credit">Website por <a data-href="links.portfolio" data-text="credits.author" href="https://joaodavidfffcosta.github.io/portfolio/" rel="noopener">João David Costa</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="action-bar" aria-label="Ações rápidas">
+    <a class="action-bar__item action-bar__item--primary" data-href="links.callLandline" href="tel:+351218162108">
+      <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#phone"></use></svg>
+      <span class="action-bar__label">Ligar</span>
+      <span class="action-bar__sub" data-text="phones.landline.display">218 162 108</span>
+    </a>
+    <a class="action-bar__item" data-href="links.whatsapp" href="https://wa.me/351917102599" rel="noopener">
+      <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#message"></use></svg>
+      <span class="action-bar__label">WhatsApp</span>
+      <span class="action-bar__sub">
+        <span class="ph" data-unless="phones.mobile.whatsappConfirmed">[CONFIRMAR]</span>
+        <span data-if="phones.mobile.whatsappConfirmed" hidden>Enviar mensagem</span>
+      </span>
+    </a>
+    <a class="action-bar__item" data-href="links.directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=38.723598,-9.129276" rel="noopener">
+      <svg class="icon" aria-hidden="true"><use href="assets/images/icons.svg#pin"></use></svg>
+      <span class="action-bar__label">Como chegar</span>
+      <span class="action-bar__sub">Ver no mapa</span>
+    </a>
+  </nav>
+</body>
+</html>

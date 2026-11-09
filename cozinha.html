@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cozinha · Olha que Dois</title>
+  <meta name="description" content="Demonstração do ecrã da cozinha do Olha que Dois.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1F4E8C">
+  <link rel="canonical" href="https://joaodavidfffcosta.github.io/olha-que-dois-demo/cozinha.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script>if (window !== window.top) document.documentElement.classList.add("in-frame");</script>
+  <!-- No web fonts here: the ordering flow makes no external network calls. -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261109">
+  <link rel="stylesheet" href="assets/css/pedidos.css?v=20261109">
+  <link rel="icon" href="assets/images/favicon.svg?v=20261109" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png?v=20261109" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=20261109">
+  <script src="assets/js/site-data.js?v=20261109" defer></script>
+  <script type="module" src="assets/js/cozinha.js?v=20261109"></script>
+  <style data-page-style></style>
+</head>
+<body class="kitchen-page">
+  <p class="demo-ribbon">MODO DEMONSTRAÇÃO, nenhum pedido é enviado ao restaurante</p>
+
+  <header class="kitchen-header">
+    <div>
+      <h1>Cozinha · Olha que Dois</h1>
+      <p class="text-small text-muted" role="status" data-waiting>Sem pedidos por iniciar</p>
+    </div>
+    <div class="kitchen-header__tools">
+      <button class="btn btn--secondary btn--compact" type="button" data-sound>Som ligado</button>
+      <button class="btn btn--ghost btn--compact" type="button" data-clear>Limpar demonstração</button>
+      <a class="btn btn--ghost btn--compact standalone-only" href="mesa.html?mesa=4">Ir para a mesa</a>
+    </div>
+  </header>
+
+  <p class="kitchen-alert" role="alert" data-alert hidden></p>
+
+  <main class="kitchen">
+    <aside class="printer" aria-label="Talão impresso">
+      <div class="printer__slot" aria-hidden="true"></div>
+      <div class="printer__paper" data-paper></div>
+    </aside>
+
+    <section aria-label="Pedidos">
+      <p class="kitchen-empty" data-empty>Ainda não há pedidos. Envie um pedido a partir da mesa e ele aparece aqui.</p>
+      <div class="orders" data-orders></div>
+    </section>
+  </main>
+
+  <div class="print-root" data-print-root></div>
+</body>
+</html>
